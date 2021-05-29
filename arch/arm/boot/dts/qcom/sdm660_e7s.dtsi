@@ -2721,5 +2721,5 @@
 
 #include "sdm660-mdss.dtsi"
 #include "sdm660-mdss-pll.dtsi"
-#include "sdm636-thermal.dtsi"
+#include "sdm660-thermal.dtsi"
 #include "sdm636-energy-model.dtsi"
