@@ -12,7 +12,7 @@ date=`date +"%Y%m%d-%H%M"`
 BUILD_START=$(date +"%s")
 KERNEL_DIR=$PWD
 HOME=/home/tashar
-REPACK_DIR=$HOME/AnyKernel3
+REPACK_DIR=$HOME/AnyKernel3-jasway-4.4
 OUT=$KERNEL_DIR/out
 DEVICE_NAME=a26x-new
 
@@ -30,12 +30,12 @@ CROSS_COMPILE_ARM32=arm-linux-gnueabi-
 
 cd $REPACK_DIR
 cp $KERNEL_DIR/out/arch/arm64/boot/Image.gz-dtb $REPACK_DIR/
-FINAL_ZIP="Tempest-v1.0-EAS-${DEVICE_NAME}-${date}.zip"
+FINAL_ZIP="Tempest-v1.0-SPECIAL-EDITION-${DEVICE_NAME}-${date}.zip"
 zip -r9 "${FINAL_ZIP}" *
 cp *.zip $OUT
 rm *.zip
 cd $KERNEL_DIR
-rm AnyKernel3/Image.gz-dtb
+rm AnyKernel3-jasway-4.4/Image.gz-dtb
 
 BUILD_END=$(date +"%s")
 DIFF=$(($BUILD_END - $BUILD_START))
