@@ -72,11 +72,6 @@
 
 atomic_long_t kswapd_waiters = ATOMIC_LONG_INIT(0);
 
-#ifndef CONFIG_KERNEL_DEBUG
-inline void dump_page(struct page *page, const char *reason) {}
-EXPORT_SYMBOL(dump_page);
-#endif
-
 /* prevent >1 _updater_ of zone percpu pageset ->high and ->batch fields */
 static DEFINE_MUTEX(pcp_batch_high_lock);
 #define MIN_PERCPU_PAGELIST_FRACTION	(8)
