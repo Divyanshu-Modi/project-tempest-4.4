@@ -1127,7 +1127,7 @@ static int rradc_read_raw(struct iio_dev *indio_dev,
 
 	return rc;
 }
-#if defined(CONFIG_KERNEL_CUSTOM_E7T)
+
 static void psy_notify_work(struct work_struct *work)
 {
 	struct rradc_chip *chip = container_of(work,
