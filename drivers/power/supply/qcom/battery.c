@@ -177,9 +177,9 @@ static void split_settled(struct pl_data *chip)
 		pval.intval = total_current_ua - slave_ua;
 		#if defined(CONFIG_KERNEL_CUSTOM_E7S)
 		if (chip->pl_mode == POWER_SUPPLY_PL_USBIN_USBIN) {
-			pr_err("pl_disable_votable effective main_psy current_ua =%d \n", pval.intval);
+			pr_debug("pl_disable_votable effective main_psy current_ua =%d \n", pval.intval);
 			if (get_effective_result_locked(chip->pl_disable_votable) && (pval.intval > ONLY_PM660_CURRENT_UA)){
-				pr_err("pl_disable_votable effective main_psy force current_ua =%d to %d \n", pval.intval, ONLY_PM660_CURRENT_UA);
+				pr_debug("pl_disable_votable effective main_psy force current_ua =%d to %d \n", pval.intval, ONLY_PM660_CURRENT_UA);
 			pval.intval = ONLY_PM660_CURRENT_UA;
 			}
 		}
@@ -1256,7 +1256,7 @@ static void handle_settled_icl_change(struct pl_data *chip)
 				       POWER_SUPPLY_PROP_TEMP,
 				       &lct_pval);
 		if (rc < 0) {
-			pr_err("Couldn't battery health value rc=%d\n", rc);
+			pr_debug("Couldn't battery health value rc=%d\n", rc);
 			return;
 		}
 		battery_temp = lct_pval.intval;

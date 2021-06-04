@@ -331,7 +331,7 @@ static int handle_jeita(struct step_chg_info *chip)
 
 #if defined(CONFIG_KERNEL_CUSTOM_D2S)
 	if (hwc_check_india) {
-		pr_err("lct video LctIsInVideo=%d, lct_therm_lvl_reserved=%d\n",
+		pr_debug("lct video LctIsInVideo=%d, lct_therm_lvl_reserved=%d\n",
 					LctIsInVideo, lct_therm_lvl_reserved.intval);
 	    if (LctIsInVideo== 1)
 			rc = power_supply_set_property(chip->batt_psy,
